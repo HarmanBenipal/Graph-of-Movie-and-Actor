@@ -1,0 +1,81 @@
+Analysis of Program
+
+** (.) for multiplication
+
+0) def readActMovfile(self, inputfile):
+
+Analysis : Complexity of reading file containing n lines is n as we need to iterate n times
+            Iterating through each line actors is a
+
+            Complexity is n.a as a is very minimal
+            O(n)
+
+1) def displayActMov(self):
+
+Analysis : There are two for loops for movie and actor.
+           Iteration over unique movies  m and Iteration over unique actor A
+
+
+            Complexity is m+a
+            We know,no of movies equal to no of lines n i.e m=n
+            A is no of actors a1+a2+a3+.......+an
+            a1 no of actors in line 1
+            a2 no of actors in line 2
+            a3 no of actors in line 3
+
+            =n+a1+a2+a3+....+an
+            =n+kn (k is atmost 2)
+            =n(2+1)
+            =3n
+            =O(n)
+
+ 2) def displayActorsOfMovie(self, movie):
+
+ Analysis : To get index of movie in ActMov list is O(n)
+            Iterate through movie is m
+            We know,no of movies equal to no of lines n i.e m=n
+
+            Complexity is n+n
+            =n(1+1)
+            =2n
+            =O(n)
+
+3) def displayMoviesOfActor(self, actor):
+
+Analysis : To get index of actor in ActMov list is O(n)
+            Iterate through actor is A
+            From previous method ,we found out A=kn
+
+            Complexity is n+kn
+            =n(k+1)
+            =O(n)
+
+4) def findMovieRelation(self, movA, movB):
+
+Analysis : Initially it calls method to find actors of movA
+            Complexity is O(n) as we need to iterate over movies
+            Complexity list[index] is O(1)
+
+            Complexity to find actors of movA is O(n)
+            Complexity to find actors of movB is O(n)
+            Iteration for common actor is k
+            Complexity is O(n)+O(n)
+            =n+n+k
+            =2n+k (k=2 as given in problem statement)
+            =2n+2
+            =2(n+1)
+            =n
+            =O(n)
+
+5) def findMovieTransRelation(self, movA, movB):
+
+Analysis : Initially it iterates over unique movies list
+            From previous method, complexity is O(n)
+
+            Complexity to find common actors between movA and movC are O(n)
+            Complexity to find common actors between movB and movC are O(n)
+
+            Complexity =n(n+n)
+            =n(2n)
+            =2n^2
+            =O(n^2)
